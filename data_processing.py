@@ -6,7 +6,7 @@ import wfdb as wf
 import pandas as pd
 
 table_path = 'table.csv'
-ECG_folder_path = 'dataset/'
+ECG_folder_path = 'C:/Users/Yanshuo/Desktop/MIT-BIH/AF_dataset/dataset/'
 
 class generateData():
     
@@ -65,6 +65,6 @@ class generateData():
 
     def openData(self, filename):
         index = wf.rdsamp(ECG_folder_path + filename)
-        record = index.p_signals[0:,0]
+        record = index[0]
         
         return record
