@@ -5,7 +5,7 @@ import numpy as np
 import wfdb as wf
 import pandas as pd
 
-table_path = 'table.csv'
+table_path = 'C:/Users/Yanshuo/Desktop/MIT-BIH/research/table.csv'
 ECG_folder_path = 'C:/Users/Yanshuo/Desktop/MIT-BIH/AF_dataset/dataset/'
 
 class generateData():
@@ -17,8 +17,11 @@ class generateData():
     
 
     def __init__(self, percentageForTrainingData):
-        self.percentageForTrainingData = percentageForTrainingData
-        self.table = self.openTable()
+        if percentageForTrainingData < 1 and percentageForTrainingData > 0:
+            self.percentageForTrainingData = percentageForTrainingData
+            self.table = self.openTable()
+        else:
+            raise ValueError ("the range should be 0 to 1!")
 
     def makeData(self):
         numOfAf, numOfNormal, numOfOther, numOfNoise = self.numOfDataForTraining()
