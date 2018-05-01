@@ -11,7 +11,7 @@ newData, newLabel = dp.datacut(9,300,10).newdata()
 # print(newData.shape)
 # print(newLabel.shape)
 shape = (newData.shape[0] ,newData.shape[1])
-newData = np.reshape(newData, (newData.shape[0],newData.shape[0], newData.shape[1]))
+newData = np.reshape(newData, (newData.shape[0],newData.shape[1], 1))
 
 model = Sequential() 
 model.add(Conv1D(filters = 512, kernel_size = 3, input_shape = shape, activation = "relu"))
