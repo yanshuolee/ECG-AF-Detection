@@ -10,7 +10,7 @@ import data_datacut as dp
 newData, newLabel = dp.datacut(9,300,10).newdata()
 # print(newData.shape)
 # print(newLabel.shape)
-shape = (newData.shape[0] ,1,newData.shape[1])
+shape = (newData.shape[0] ,newData.shape[1])
 newData = newData.reshape(newData.shape[0], 1, newData.shape[1])
 
 model = Sequential() 
