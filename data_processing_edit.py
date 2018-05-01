@@ -5,21 +5,21 @@ import numpy as np
 import wfdb as wf
 import pandas as pd
 import pylab as pl
-from numba import jit
+#from numba import jit
 np.set_printoptions(suppress=True) #prevent numpy exponential notation on print, default False
 
 
 table_path = 'table.csv'
-ECG_folder_path = 'dataset/'
+ECG_folder_path = '/home/hsiehch/dataset/'
 
-@jit
+#@jit
 class generateData():
     '''available method: modifyData() / dataInfo() / '''
 
     SAMPLE_RATE = 300
     THRESH = 30 * SAMPLE_RATE
     THRESH_1 = 9 * SAMPLE_RATE
-    ONE_HOT_ENCODE_LABEL = {'A':'0,0,0,1', '~':'0,0,1,0', 'N':'0,1,0,0', 'O':'1,0,0,0'}
+    ONE_HOT_ENCODE_LABEL = {'A':[0,0,0,1], '~':[0,0,1,0], 'N':[0,1,0,0], 'O':[1,0,0,0]}
     global txtFile
     global txtFile_count_data
     global train_file
@@ -129,9 +129,15 @@ class generateData():
 
         self.newArr = np.array(self.newArr)
         self.data_length = np.array(self.data_length)
-        print(self.newArr)
-        print('-------')
-        print(self.data_length.shape)
+
+        #print(len(self.newArr[2]))
+        for i in self.newArr:
+      	    if len(i) != 9004:
+                print(len(i))
+#self.newArr.shape = (11505,9004)
+        print(self.newArr.shape)
+#        print('-------')
+#        print(self.data_length.shape)
 
         return self.newArr, self.data_length
 
