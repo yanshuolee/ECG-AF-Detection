@@ -14,7 +14,7 @@ shape = (newData.shape[0] ,1,newData.shape[1])
 newData = newData.reshape(newData.shape[0], 1, newData.shape[1])
 
 model = Sequential() 
-model.add(Conv1D(filters = 512, kernel_size = 3, input_shape = (None, 2700), activation = "relu"))
+model.add(Conv1D(filters = 512, kernel_size = 3, input_shape = shape, activation = "relu"))
 model.add(MaxPooling1D(pool_size = 100))
 model.add(Dense(4, activation = "softmax"))
 print(model.summary())
