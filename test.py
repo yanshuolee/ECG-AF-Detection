@@ -13,7 +13,7 @@ newData, newLabel = dp.datacut(9,300,10).newdata()
 
 
 model = Sequential() 
-model.add(Conv1D(filters = 512, kernel_size = 3, input_shape = (11505, 9000), activation = "relu"))
+model.add(Conv1D(filters = 512, kernel_size = 3, input_shape = (None, 2700), activation = "relu"))
 model.add(MaxPooling1D(pool_size = 100))
 model.add(Dense(4, activation = "softmax"))
 
