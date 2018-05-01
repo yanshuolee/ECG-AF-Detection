@@ -11,8 +11,6 @@ newData, newLabel = dp.datacut(9,300,10).newdata()
 # print(len(newData[6]))
 # print(newData)
 
-a = dp.generateData(0.5)
-train, test = a.modifyDataTo30s()
 
 model = Sequential() 
 model.add(Conv1D(filters = 512, kernel_size = 3, input_shape = (11505, 9000), activation = "relu"))
