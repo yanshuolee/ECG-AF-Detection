@@ -5,13 +5,14 @@ import numpy as np
 import wfdb as wf
 import pandas as pd
 import pylab as pl
-import json
+from numba import jit
 np.set_printoptions(suppress=True) #prevent numpy exponential notation on print, default False
 
 
 table_path = 'table.csv'
-ECG_folder_path = '/home/hsiehch/dataset/'
+ECG_folder_path = 'dataset/'
 
+@jit
 class generateData():
     '''available method: modifyData() / dataInfo() / '''
 
@@ -115,7 +116,7 @@ class generateData():
     data_length = []
 
     def modifyDataTo30s(self):
-        
+
         afTotal = self.table.count(axis = 0)[3]
         noiseTotal = self.table.count(axis = 0)[1]
         otherTotal = self.table.count(axis = 0)[5]
@@ -130,7 +131,9 @@ class generateData():
         self.data_length = np.array(self.data_length)
         print(self.newArr)
         print('-------')
-        print(self.data_length)
+        print(self.data_length.shape)
+
+        return self.newArr, self.data_length
 
         # self.txtFile.close()
         # self.txtFile_count_data.close()
@@ -154,28 +157,33 @@ class generateData():
                     LOOPS += 1
                 for j in range(LOOPS):
                     if j == LOOPS:
-                        self.newArr.append(data[dataLen-self.THRESH:])
+                        tmp = np.append(data[dataLen-self.THRESH:], self.ONE_HOT_ENCODE_LABEL[label])
+                        self.newArr.append(tmp)
                         # self.writeToFile(newArr, label)
                         count += 1
                     else:
-                        self.newArr.append(data[j*self.THRESH: j*self.THRESH+self.THRESH])
+                        tmp = np.append(data[j*self.THRESH: j*self.THRESH+self.THRESH], self.ONE_HOT_ENCODE_LABEL[label])
+                        self.newArr.append(tmp)
                         # self.writeToFile(newArr, label)
                         count += 1
             else:
                 LOOPS = self.THRESH // dataLen
                 if self.THRESH % dataLen == 0:
                     for j in range(LOOPS):
-                        self.newArr.append(data[j*dataLen: j*dataLen+dataLen])
+                        tmp = np.append(data[j*dataLen: j*dataLen+dataLen], self.ONE_HOT_ENCODE_LABEL[label])
+                        self.newArr.append(tmp)
                         # self.writeToFile(newArr, label)
                         count += 1
                 else:
                     for j in range(LOOPS+1):
                         if j == LOOPS:
-                            self.newArr.append(data[dataLen-self.THRESH:])
+                            tmp = np.append(data[dataLen-self.THRESH:], self.ONE_HOT_ENCODE_LABEL[label])
+                            self.newArr.append(tmp)
                             # self.writeToFile(newArr, label)
                             count += 1
                         else:
-                            self.newArr.append(data[j*dataLen: j*dataLen+dataLen])
+                            tmp = np.append(data[j*dataLen: j*dataLen+dataLen], self.ONE_HOT_ENCODE_LABEL[label])
+                            self.newArr.append(tmp)
                             # self.writeToFile(newArr, label)
                             count += 1
         
@@ -206,19 +214,19 @@ class generateData():
 
     def numOfDataForTraining(self):
        
-        af = int(int(self.data_length[0][1]) * self.percentageForTrainingData)
-        noise = int(int(self.data_length[1][1]) * self.percentageForTrainingData)
-        other = int(int(self.data_length[2][1]) * self.percentageForTrainingData)
-        normal = int(int(self.data_length[3][1]) * self.percentageForTrainingData)
+        af = int(int(self.data_length[1]) * self.percentageForTrainingData)
+        noise = int(int(self.data_length[3]) * self.percentageForTrainingData)
+        other = int(int(self.data_length[5]) * self.percentageForTrainingData)
+        normal = int(int(self.data_length[7]) * self.percentageForTrainingData)
 
         return af, normal, other, noise
 
     def startMakingData(self, numOfAf, numOfNormal, numOfOther, numOfNoise):
                 
-        afTotal = int(self.data_length[0][1])
-        noiseTotal = int(self.data_length[1][1])
-        otherTotal = int(self.data_length[2][1])
-        normalTotal = int(self.data_length[3][1])
+        afTotal = int(self.data_length[1])
+        noiseTotal = int(self.data_length[3])
+        otherTotal = int(self.data_length[5])
+        normalTotal = int(self.data_length[7])
         
         self.train_file = open('training.txt', 'w+')
         self.test_file = open('test.txt', 'w+')
@@ -266,5 +274,4 @@ class generateData():
         
         return record
 
-a = generateData(0.7)
-a.modifyDataTo30s()
+# a.makeData()
