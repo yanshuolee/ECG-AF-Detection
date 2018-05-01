@@ -10,7 +10,7 @@ import data_datacut as dp
 newData, newLabel = dp.datacut(9,300,10).newdata()
 # print(newData.shape)
 # print(newLabel.shape)
-
+newData = newData.reshape(newData.shape[0], 1, newData.shape[1])
 
 model = Sequential() 
 model.add(Conv1D(filters = 512, kernel_size = 3, input_shape = (None, 2700), activation = "relu"))
