@@ -14,6 +14,7 @@ newData, newLabel = dp.datacut(9,300,10).newdata()
 trainData = newData.reshape((-1, newData.shape[1] ,1))
 ## to check:
 # 1. train shape
+print(trainData)
 print(trainData.shape)
 
 model = Sequential() 
