@@ -17,8 +17,7 @@ trainData = newData.reshape((-1, newData.shape[1] ,1))
 print(trainData.shape)
 
 model = Sequential() 
-model.add(Conv1D(filters = 512, kernel_size = 3,  activation = "relu"))
-# input_shape = (2700 ,1),
+model.add(Conv1D(filters = 512, kernel_size = 3, input_shape = (2700 ,1), activation = "relu"))
 # model.add(MaxPooling1D(pool_size = 100))
 # model.add(Dense(4, activation = "softmax"))
 print(model.summary())
