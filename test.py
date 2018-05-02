@@ -11,7 +11,7 @@ newData, newLabel = dp.datacut(9,300,10).newdata()
 # print(newData.shape)
 # print(newLabel.shape)
 
-trainData = newData.reshape((-1, newData.shape[1] ,1))
+trainData = newData.reshape((newData.shape[0], newData.shape[1] ,1))
 ## to check:
 # 1. train shape
 # print(trainData)
