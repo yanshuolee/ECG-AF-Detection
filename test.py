@@ -15,13 +15,13 @@ print(trainData.shape)
 
 
 model = Sequential() 
-model.add(Conv1D(filters = 512, kernel_size = 3, input_shape = (newData.shape[0], 2700, 1), activation = "relu"))
+model.add(Conv1D(filters = 512, kernel_size = 3, input_shape = (2700, 1), activation = "relu"))
 # model.add(MaxPooling1D(pool_size = 100))
 # model.add(Dense(4, activation = "softmax"))
 print(model.summary())
 
 model.compile(optimizer = "adam", loss = "categorical_crossentropy", matrics = ["accuracy"])
-model.fit(x = trainData, y = newLabel, validation_split=0.2, epochs=10, batch_size=100, verbose=2)
+model.fit(x = trainData, y = newLabel, epochs=10, batch_size=100, verbose=2)
 
 
 
