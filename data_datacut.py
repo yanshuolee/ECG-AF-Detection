@@ -1,7 +1,7 @@
 import numpy as np
 import wfdb as wf
 import pandas as pd
-from numba import jit
+from numba import vectorize
 from timeit import default_timer as timer
 
 table_path = 'table.csv'
@@ -36,7 +36,7 @@ class datacut():
         
         
     
-    @jit
+    @vectorize(["(int, int, int)"], target='cuda')
     def datamodify(self, Total, dataIndex, labelIndex):
         for i in range(Total):
             previous_j = 0
