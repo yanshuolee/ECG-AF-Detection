@@ -22,7 +22,7 @@ model.add(Conv1D(filters = 512, kernel_size = 3, input_shape = (2700, 1), activa
 print(model.summary())
 
 model.compile(optimizer = "adam", loss = "categorical_crossentropy", matrics = ["accuracy"])
-model.fit(x = trainData, y = newLabel, epochs=10, batch_size=100, verbose=2)
+model.fit(x = trainData, y = trainLabel, epochs=10, batch_size=100, verbose=2)
 
 
 
