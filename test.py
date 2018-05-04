@@ -17,9 +17,9 @@ print(trainLabel.shape)
 
 
 model = Sequential() 
-model.add(Conv1D(filters = 1, kernel_size = 3, input_shape = (2700, 1), activation = "relu"))
-# model.add(MaxPooling1D(pool_size = 100))
-# model.add(Dense(4, activation = "softmax"))
+model.add(Conv1D(filters = 512, kernel_size = 3, input_shape = (2700, 1), activation = "relu"))
+model.add(MaxPooling1D(pool_size = 100))
+model.add(Dense(4, activation = "softmax"))
 print(model.summary())
 
 model.compile(optimizer = "adam", loss = "categorical_crossentropy", matrics = ["accuracy"])
