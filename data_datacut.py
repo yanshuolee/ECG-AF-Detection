@@ -42,7 +42,7 @@ class datacut():
         
         
     
-    @vectorize(["(int32, int32, int32, int32)"], target='cuda')
+    @vectorize(["(int32, int32, int32)"], target='cuda')
     def datamodify(self, Total, dataIndex, labelIndex):
         for i in range(Total):
             previous_j = 0
