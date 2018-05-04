@@ -2,6 +2,7 @@ import numpy as np
 import wfdb as wf
 import pandas as pd
 from numba import jit
+from timeit import default_timer as timer
 
 table_path = 'table.csv'
 ECG_folder_path = '/home/hsiehch/dataset/'
@@ -14,6 +15,9 @@ class datacut():
         self.table = self.openTable()
         self.recursive = recursive    
     def newdata(self):
+        
+        start = timer()
+        
         afTotal = self.table.count(axis = 0)[3]
         noiseTotal = self.table.count(axis = 0)[1]
         otherTotal = self.table.count(axis = 0)[5]
@@ -25,6 +29,9 @@ class datacut():
         newData = np.array(self.newData)
         newLabel = np.array(self.newLabel)
         return newData, newLabel
+        
+        vector_add_cpu_time = timer() - start
+        print("GPU function took %f seconds." % vector_add_cpu_time)
     
     @jit
     def datamodify(self, Total, dataIndex, labelIndex):
