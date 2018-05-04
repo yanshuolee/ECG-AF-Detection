@@ -1,6 +1,7 @@
 import numpy as np
 import wfdb as wf
 import pandas as pd
+from numba import jit
 
 table_path = 'table.csv'
 ECG_folder_path = '/home/hsiehch/dataset/'
@@ -24,6 +25,8 @@ class datacut():
         newData = np.array(self.newData)
         newLabel = np.array(self.newLabel)
         return newData, newLabel
+    
+    @jit
     def datamodify(self, Total, dataIndex, labelIndex):
         for i in range(Total):
             previous_j = 0
