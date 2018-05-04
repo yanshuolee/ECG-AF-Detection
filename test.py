@@ -12,18 +12,20 @@ newData, newLabel = dp.datacut(9,300,10).newdata()
 
 trainData = newData.reshape((newData.shape[0], newData.shape[1], 1))
 trainLabel = newLabel.reshape((newLabel.shape[0], newLabel.shape[1], 1))
-print(trainData.shape)
-print(trainLabel.shape)
+print(trainData)
+print(trainLabel)
+# print(trainData.shape)
+# print(trainLabel.shape)
 
 
-model = Sequential() 
-model.add(Conv1D(filters = 512, kernel_size = 3, input_shape = (2700, 1), activation = "relu"))
-model.add(MaxPooling1D(pool_size = 100))
-model.add(Dense(4, activation = "softmax"))
-print(model.summary())
+# model = Sequential() 
+# model.add(Conv1D(filters = 512, kernel_size = 3, input_shape = (2700, 1), activation = "relu"))
+# model.add(MaxPooling1D(pool_size = 100))
+# model.add(Dense(4, activation = "softmax"))
+# print(model.summary())
 
-model.compile(optimizer = "adam", loss = "categorical_crossentropy", matrics = ["accuracy"])
-model.fit(x = trainData, y = trainLabel, epochs=10, batch_size=100, verbose=2)
+# model.compile(optimizer = "adam", loss = "categorical_crossentropy", matrics = ["accuracy"])
+# model.fit(x = trainData, y = trainLabel, epochs=10, batch_size=100, verbose=2)
 
 
 
