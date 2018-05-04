@@ -28,10 +28,13 @@ class datacut():
         self.datamodify(normalTotal, 6, 7)
         newData = np.array(self.newData)
         newLabel = np.array(self.newLabel)
-        return newData, newLabel
         
         vector_add_cpu_time = timer() - start
         print("GPU function took %f seconds." % vector_add_cpu_time)
+        
+        return newData, newLabel
+        
+        
     
     @jit
     def datamodify(self, Total, dataIndex, labelIndex):
