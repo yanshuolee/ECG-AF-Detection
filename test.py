@@ -8,17 +8,13 @@ np.set_printoptions(suppress=True)
 
 import data_datacut as dp
 newData, newLabel = dp.datacut(9,300,10).newdata()
-# print(newData.shape)
-# print(newLabel.shape)
+
 
 trainData = newData.reshape((newData.shape[0], newData.shape[1] ,1))
-## to check:
-# 1. train shape
-# print(trainData)
-print(trainData.shape)
+
 
 model = Sequential() 
-model.add(Conv1D(filters = 512, kernel_size = 3, input_shape = (1, 2700), activation = "relu"))
+model.add(Conv1D(filters = 512, kernel_size = 3, input_shape = (2700, 1), activation = "relu"))
 # model.add(MaxPooling1D(pool_size = 100))
 # model.add(Dense(4, activation = "softmax"))
 print(model.summary())
