@@ -8,9 +8,9 @@ table_path = 'table.csv'
 ECG_folder_path = '/home/hsiehch/dataset/'
 
 spec = [
-    ('datatake', int32),
+    ('datatake', np.int32),
     ('table', str),# a simple scalar field
-    ('recursive', int32),          # an array field
+    ('recursive', np.int32),          # an array field
 ]
 @jitclass(spec)
 class datacut():
