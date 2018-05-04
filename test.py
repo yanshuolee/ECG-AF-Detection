@@ -11,6 +11,7 @@ newData, newLabel = dp.datacut(9,300,10).newdata()
 
 
 trainData = newData.reshape((newData.shape[0], newData.shape[1], 1))
+trainLabel = newLabel.reshape((newLabel.shape[0], newLabel.shape[1], 1))
 print(trainData.shape)
 
 
