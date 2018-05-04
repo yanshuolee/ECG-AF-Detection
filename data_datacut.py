@@ -11,7 +11,7 @@ spec = [
     ('datatake', np.int32),
     ('table', str),# a simple scalar field
     ('recursive', np.int32),
-    ('openData', float32[:]),# an array field
+    ('openData', np.float32[:]),# an array field
 ]
 @jitclass(spec)
 class datacut():
