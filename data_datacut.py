@@ -10,7 +10,8 @@ ECG_folder_path = '/home/hsiehch/dataset/'
 spec = [
     ('datatake', np.int32),
     ('table', str),# a simple scalar field
-    ('recursive', np.int32),          # an array field
+    ('recursive', np.int32),
+    ('openData', float32[:]),# an array field
 ]
 @jitclass(spec)
 class datacut():
