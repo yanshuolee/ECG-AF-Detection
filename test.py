@@ -9,17 +9,12 @@ np.set_printoptions(suppress=True)
 
 import data_processing as dp
 newData, newLabel = dp.generateData(30).makeData()
-print(newLabel.shape)
-
 
 trainData = newData.reshape((newData.shape[0], newData.shape[1], 1))
 trainLabel = np_utils.to_categorical(newLabel, 4)
-print(trainLabel.shape)
 
-# print(trainData)
-# print(trainLabel)
-print(trainData.shape)
-print(trainLabel.shape)
+print('Train data shape:' , trainData.shape)
+print('Train label shape:', trainLabel.shape)
 
 
 model = Sequential() 
