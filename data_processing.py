@@ -9,7 +9,7 @@ class generateData():
     
     newData = []
     newLabel = []
-    ONE_HOT_ENCODE_LABEL = {'A':[0,0,0,1], '~':[0,0,1,0], 'N':[0,1,0,0], 'O':[1,0,0,0]}
+    ONE_HOT_ENCODE_LABEL = {'A':0, '~':1, 'N':2, 'O':3}
 
     def __init__(self, seconds, overlap_dot = 0):
         SAMPLE_RATE = 300
