@@ -8,7 +8,7 @@ np.set_printoptions(suppress=True)
 
 
 import data_processing as dp
-newData, newLabel = dp.generateData(30).makeData()
+newData, newLabel = dp.makeData(30)
 
 trainData = newData.reshape((newData.shape[0], newData.shape[1], 1))
 trainLabel = np_utils.to_categorical(newLabel, 4)
