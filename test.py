@@ -3,6 +3,7 @@ import wfdb as wf
 import pandas as pd
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten, Conv1D, MaxPooling1D
+from keras.utils import np_utils
 np.set_printoptions(suppress=True)
 
 
@@ -11,7 +12,8 @@ newData, newLabel = dp.generateData(30).makeData()
 
 
 trainData = newData.reshape((newData.shape[0], newData.shape[1], 1))
-trainLabel = newLabel.reshape((newLabel.shape[0], newLabel.shape[1], 1))
+trainLabel = np_utils.to_categorical(newLabel, 4)
+# trainLabel = newLabel.reshape((newLabel.shape[0], newLabel.shape[1], 1))
 # print(trainData)
 # print(trainLabel)
 print(trainData.shape)
