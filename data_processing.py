@@ -96,9 +96,9 @@ class generateData():
         record.shape = (record.shape[0], )
         return record
 
-print("30s : ")
-newData, newLabel = generateData(30).makeData()
-print(newLabel.shape)
+# print("30s : ")
+# newData, newLabel = generateData(30).makeData()
+# print(newLabel.shape)
 # print("9s : ")
 # newData, newLabel = generateData(9, 300).makeData()
 # print("9s overlap_dot: ")
