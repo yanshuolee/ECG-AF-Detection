@@ -12,8 +12,10 @@ newData, newLabel = dp.generateData(30).makeData()
 
 
 trainData = newData.reshape((newData.shape[0], newData.shape[1], 1))
-trainLabel = np_utils.to_categorical(newLabel, 4)
-# trainLabel = newLabel.reshape((newLabel.shape[0], newLabel.shape[1], 1))
+
+tmp = newLabel.reshape((newLabel.shape[0], 1))
+trainLabel = np_utils.to_categorical(tmp, 4)
+
 # print(trainData)
 # print(trainLabel)
 print(trainData.shape)
