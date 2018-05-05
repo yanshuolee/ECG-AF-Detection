@@ -13,8 +13,7 @@ print(newLabel.shape)
 
 
 trainData = newData.reshape((newData.shape[0], newData.shape[1], 1))
-tmp = np_utils.to_categorical(newLabel, 4)
-trainLabel = tmp.reshape((tmp.shape[0], tmp.shape[1], 1))
+trainLabel = np_utils.to_categorical(newLabel, 4)
 print(trainLabel.shape)
 
 # print(trainData)
