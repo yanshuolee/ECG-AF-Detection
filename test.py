@@ -6,14 +6,14 @@ from keras.layers import Dense, Dropout, Flatten, Conv1D, MaxPooling1D
 np.set_printoptions(suppress=True)
 
 
-import data_datacut as dp
+import data_processing as dp
 newData, newLabel = dp.datacut(9,300,10).newdata()
 
 
-trainData = newData.reshape((newData.shape[0], newData.shape[1], 1))
-trainLabel = newLabel.reshape((newLabel.shape[0], newLabel.shape[1], 1))
-print(trainData)
-print(trainLabel)
+# trainData = newData.reshape((newData.shape[0], newData.shape[1], 1))
+# trainLabel = newLabel.reshape((newLabel.shape[0], newLabel.shape[1], 1))
+# print(trainData)
+# print(trainLabel)
 # print(trainData.shape)
 # print(trainLabel.shape)
 
