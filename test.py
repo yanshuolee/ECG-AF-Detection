@@ -29,7 +29,7 @@ model.add(Flatten())
 model.add(Dense(4, activation = "softmax"))
 print(model.summary())
 
-model.compile(optimizer ='rmsprop', loss = "categorical_crossentropy", matrics = ["accuracy"])
+model.compile(optimizer ='adam', loss = "categorical_crossentropy", metrics=['accuracy'])
 model.fit(x = trainData, y = trainLabel, epochs=10, batch_size=100, verbose=2)
 
 
