@@ -9,11 +9,13 @@ np.set_printoptions(suppress=True)
 
 import data_processing as dp
 newData, newLabel = dp.generateData(30).makeData()
+print(newLabel.shape)
 
 
 trainData = newData.reshape((newData.shape[0], newData.shape[1], 1))
 
 tmp = newLabel.reshape((newLabel.shape[0], 1))
+print(tmp.shape)
 trainLabel = np_utils.to_categorical(tmp, 4)
 
 # print(trainData)
