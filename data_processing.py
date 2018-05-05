@@ -5,7 +5,7 @@ import pandas as pd
 table_path = 'table.csv'
 ECG_folder_path = '/home/hsiehch/dataset/'
 
-class generateData():
+class makeData():
     
     newData = []
     newLabel = []
@@ -15,9 +15,10 @@ class generateData():
         SAMPLE_RATE = 300
         self.desired_data_point = seconds * SAMPLE_RATE
         self.table = self.openTable()
-        self.overlap_dot = overlap_dot    
+        self.overlap_dot = overlap_dot
+        self.generateData()
 
-    def makeData(self):
+    def generateData(self):
         
         afTotal = self.table.count(axis = 0)[3]
         noiseTotal = self.table.count(axis = 0)[1]
