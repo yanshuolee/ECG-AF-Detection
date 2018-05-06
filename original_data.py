@@ -5,8 +5,8 @@ import numpy as np
 import wfdb as wf
 import pandas as pd
 
-table_path = 'C:/Users/Yanshuo/Desktop/MIT-BIH/research/table.csv'
-ECG_folder_path = 'C:/Users/Yanshuo/Desktop/MIT-BIH/AF_dataset/dataset/'
+table_path = 'table.csv'
+ECG_folder_path = '/home/hsiehch/dataset/'
 
 class generateData():
     
@@ -20,6 +20,7 @@ class generateData():
         if percentageForTrainingData < 1 and percentageForTrainingData > 0:
             self.percentageForTrainingData = percentageForTrainingData
             self.table = self.openTable()
+            self.makeData()
         else:
             raise ValueError ("the range should be 0 to 1!")
 
