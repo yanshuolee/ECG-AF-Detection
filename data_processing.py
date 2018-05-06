@@ -10,12 +10,14 @@ class makeData():
     newData = []
     newLabel = []
     ONE_HOT_ENCODE_LABEL = {'A':0, '~':1, 'N':2, 'O':3}
+    LABEL_TOTAL_COUNT = []
 
-    def __init__(self, seconds, overlap_dot = 0):
+    def __init__(self, seconds, overlap_dot = 0, percentageForTrainingData):
         SAMPLE_RATE = 300
         self.desired_data_point = seconds * SAMPLE_RATE
         self.table = self.openTable()
         self.overlap_dot = overlap_dot
+        self.percentageForTrainingData = percentageForTrainingData
         self.generateData()
 
     def generateData(self):
@@ -31,7 +33,9 @@ class makeData():
         self.startMakingData(normalTotal, 6, 7)
         newData = np.array(self.newData)
         newLabel = np.array(self.newLabel)
-        return newData, newLabel
+        
+        self.splitData()
+#         return newData, newLabel
 
     def startMakingData(self, totalDataInThisClass, dataIndex, labelIndex):
         
@@ -47,6 +51,7 @@ class makeData():
             if(dataLen < self.desired_data_point):
                 self.increaseData(i, dataIndex, labelIndex)
         
+        self.LABEL_TOTAL_COUNT.append(self.CLASS_AMOUNT)
         print(str(self.table.iloc[i,labelIndex]) + " is " + str(self.CLASS_AMOUNT))
 
     def reduceData(self,i ,dataIndex, labelIndex):
@@ -87,6 +92,14 @@ class makeData():
         self.newLabel.append(self.ONE_HOT_ENCODE_LABEL[label])
         self.CLASS_AMOUNT += 1
         
+    def splitData(self, self.percentageForTrainingData):
+        train_data = np.array([])
+        train_label = np.array([])
+        test_data = np.array([])
+        test_label = np.array([])
+        
+        # shart here
+    
     def openTable(self):
         dataFromCSV = pd.read_csv(table_path,dtype='str',header=None)
         return dataFromCSV
