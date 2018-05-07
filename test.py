@@ -4,6 +4,7 @@ import pandas as pd
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten, Conv1D, MaxPooling1D
 from keras.utils import np_utils
+import pylab as plt
 np.set_printoptions(suppress=True)
 
 
@@ -36,8 +37,22 @@ model.add(Dense(4, activation = "softmax"))
 print(model.summary())
 
 model.compile(optimizer ='adam', loss = "categorical_crossentropy", metrics=['accuracy'])
-model.fit(x = trainData, y = trainLabel, epochs=10,validation_split=0.2, batch_size=100, verbose=2)
+history = model.fit(x = trainData, y = trainLabel, epochs=10,validation_split=0.2, batch_size=100, verbose=2)
+print(history.history.keys())
 
-
-
-
+# summarize history for accuracy
+plt.plot(history.history['acc'])
+plt.plot(history.history['val_acc'])
+plt.title('model accuracy')
+plt.ylabel('accuracy')
+plt.xlabel('epoch')
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
+# summarize history for loss
+plt.plot(history.history['loss'])
+plt.plot(history.history['val_loss'])
+plt.title('model loss')
+plt.ylabel('loss')
+plt.xlabel('epoch')
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
