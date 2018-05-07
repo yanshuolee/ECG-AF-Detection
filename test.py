@@ -7,11 +7,11 @@ from keras.utils import np_utils
 np.set_printoptions(suppress=True)
 
 
-import original_data as dp
-# import data_preprocessing as dp
+# import original_data as dp
+import data_preprocessing as dp
 
-tmp = dp.makeData(0.7)
-trainD, trainL, testD, testL = tmp.generateData()
+tmp = dp.makeData(9, 0.7)
+trainD, trainL, testD, testL = tmp.main()
 print(trainD.shape)
 print(trainL.shape)
 print(testD.shape)
