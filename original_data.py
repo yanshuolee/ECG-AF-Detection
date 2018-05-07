@@ -14,7 +14,7 @@ class makeData():
     traingLabel = []
     testData = []
     testLabel = []
-    ONE_HOT_ENCODE_LABEL = {'A':0, '~':1, 'N':2, ~'O':3}
+    ONE_HOT_ENCODE_LABEL = {'A':0, '~':1, 'N':2, 'O':3}
     
 
     def __init__(self, percentageForTrainingData):
