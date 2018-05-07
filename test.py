@@ -9,7 +9,9 @@ np.set_printoptions(suppress=True)
 
 import original_data as dp
 # import data_preprocessing as dp
-trainD, trainL, testD, testL = dp.makeData(0.7)
+
+tmp = dp.makeData(0.7)
+trainD, trainL, testD, testL = tmp.generateData()
 print(trainD.shape)
 print(trainL.shape)
 print(testD.shape)
