@@ -21,7 +21,7 @@ class makeData():
         if percentageForTrainingData < 1 and percentageForTrainingData > 0:
             self.percentageForTrainingData = percentageForTrainingData
             self.table = self.openTable()
-            self.generateData()
+#             self.generateData()
         else:
             raise ValueError ("the range should be 0 to 1!")
 
