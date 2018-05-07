@@ -39,3 +39,4 @@ print(model.summary())
 
 model.compile(optimizer ='adam', loss = "categorical_crossentropy", metrics=['accuracy'])
 model.fit(x = trainData, y = trainLabel, epochs=10,validation_split=0.2, batch_size=100, verbose=2)
+model.evaluate(x = testData, y = testLabel)
