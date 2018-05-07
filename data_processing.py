@@ -34,8 +34,8 @@ class makeData():
         newData = np.array(self.newData)
         newLabel = np.array(self.newLabel)
         
-        self.splitData()
-#         return newData, newLabel
+        T_d, T_l, Te_d, Te_l = self.splitData()
+        return T_d, T_l, Te_d, Te_l
 
     def startMakingData(self, totalDataInThisClass, dataIndex, labelIndex):
         
@@ -92,14 +92,39 @@ class makeData():
         self.newLabel.append(self.ONE_HOT_ENCODE_LABEL[label])
         self.CLASS_AMOUNT += 1
         
-    def splitData(self, self.percentageForTrainingData):
-        train_data = np.array([])
-        train_label = np.array([])
-        test_data = np.array([])
-        test_label = np.array([])
+    def splitData(self):
+        train_data = []
+        train_label = []
+        test_data = []
+        test_label = []
         
-        # shart here
-    
+        trainDataIndex = self.getDataPosition()
+        for i in trainDataIndex:
+            for j in range(i[0], i[2]):
+                if j < i[1]:
+                    train_data.append(self.newData[j])
+                    train_label.append(self.newLabel[j])
+                else:
+                    test_data.append(self.newData[j])
+                    test_label.append(self.newLabel[j])
+
+        train_data = np.array(train_data)
+        train_label = np.array(train_label)
+        test_data = np.array(test_data)
+        test_label = np.array(test_label)
+        return train_data, train_label, test_data, test_label
+
+    def getDataPosition(self):
+        amount_for_training = [int(i*self.percentageForTrainingData) for i in self.LABEL_TOTAL_COUNT]
+        startPoint = 0
+        trainDataIndex = []
+        for i in range(len(self.LABEL_TOTAL_COUNT)):
+            trainDataIndex.append([startPoint, amount_for_training[i]+startPoint, self.LABEL_TOTAL_COUNT[i]+startPoint])
+            startPoint += self.LABEL_TOTAL_COUNT[i]
+        
+        print('train data index: ', trainDataIndex)
+        return trainDataIndex
+
     def openTable(self):
         dataFromCSV = pd.read_csv(table_path,dtype='str',header=None)
         return dataFromCSV

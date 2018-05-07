@@ -14,6 +14,7 @@ class generateData():
     traingLabel = []
     testData = []
     testLabel = []
+    ONE_HOT_ENCODE_LABEL = {'A':0, '~':1, 'N':2, 'O':3}
     
 
     def __init__(self, percentageForTrainingData):
@@ -55,13 +56,15 @@ class generateData():
         for i in range(Total):
             if i < trainingPart:
                 data = self.openData(self.table.iloc[i,dataIndex])
+                label = self.table.iloc[i,labelIndex]
                 self.trainingData.append(data)
-                self.traingLabel.append([self.table.iloc[i,labelIndex]])
+                self.traingLabel.append(self.ONE_HOT_ENCODE_LABEL[label])
 
             else:
                 data = self.openData(self.table.iloc[i,dataIndex])
+                self.table.iloc[i,labelIndex]
                 self.testData.append(data)
-                self.testLabel.append([self.table.iloc[i,labelIndex]])
+                self.testLabel.append(self.ONE_HOT_ENCODE_LABEL[label])
 
     def openTable(self):
         dataFromCSV = pd.read_csv(table_path,dtype='str',header=None)
