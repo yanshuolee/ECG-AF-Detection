@@ -18,9 +18,9 @@ class makeData():
         self.table = self.openTable()
         self.overlap_dot = overlap_dot
         self.percentageForTrainingData = percentageForTrainingData
-        self.generateData()
+        
 
-    def generateData(self):
+    def main(self):
         
         afTotal = self.table.count(axis = 0)[3]
         noiseTotal = self.table.count(axis = 0)[1]
