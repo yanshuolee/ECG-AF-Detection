@@ -29,11 +29,11 @@ class makeData():
         numOfAf, numOfNormal, numOfOther, numOfNoise = self.numOfDataForTraining()
         self.startMakingData(numOfAf, numOfNormal, numOfOther, numOfNoise)
         
-        self.trainingData = np.array(self.trainingData)
-        self.trainingData = np.array(self.trainingData)
-        self.trainingData = np.array(self.trainingData)
-        self.trainingData = np.array(self.trainingData)
-        return self.trainingData, self.traingLabel, self.testData, self.testLabel 
+        trainingData = np.array(self.trainingData)
+        trainingData = np.array(self.trainingData)
+        trainingData = np.array(self.trainingData)
+        trainingData = np.array(self.trainingData)
+        return trainingData, traingLabel, testData, testLabel 
 
     def numOfDataForTraining(self):
         
