@@ -8,7 +8,7 @@ import pandas as pd
 table_path = 'table.csv'
 ECG_folder_path = '/home/hsiehch/dataset/'
 
-class generateData():
+class makeData():
     
     trainingData = []
     traingLabel = []
@@ -21,11 +21,11 @@ class generateData():
         if percentageForTrainingData < 1 and percentageForTrainingData > 0:
             self.percentageForTrainingData = percentageForTrainingData
             self.table = self.openTable()
-            self.makeData()
+            self.generateData()
         else:
             raise ValueError ("the range should be 0 to 1!")
 
-    def makeData(self):
+    def generateData(self):
         numOfAf, numOfNormal, numOfOther, numOfNoise = self.numOfDataForTraining()
         self.startMakingData(numOfAf, numOfNormal, numOfOther, numOfNoise)
         return self.trainingData, self.traingLabel, self.testData, self.testLabel 
