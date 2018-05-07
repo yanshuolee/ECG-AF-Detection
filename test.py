@@ -4,8 +4,6 @@ import pandas as pd
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten, Conv1D, MaxPooling1D
 from keras.utils import np_utils
-import pylab as plt
-matplotlib.use('Agg')
 np.set_printoptions(suppress=True)
 
 
