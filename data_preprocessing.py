@@ -12,12 +12,16 @@ class makeData():
     ONE_HOT_ENCODE_LABEL = {'A':0, '~':1, 'N':2, 'O':3}
     LABEL_TOTAL_COUNT = []
 
-    def __init__(self, seconds, percentageForTrainingData, overlap_dot = 0):
+    def __init__(self, seconds, percentageForTraining, percentageForValidation, percentageForTesting, overlap_dot = 0):
         SAMPLE_RATE = 300
         self.desired_data_point = seconds * SAMPLE_RATE
         self.table = self.openTable()
         self.overlap_dot = overlap_dot
-        self.percentageForTrainingData = percentageForTrainingData
+        self.percentageForTraining = percentageForTraining
+        self.percentageForValidation = percentageForValidation
+        self.percentageForTesting = percentageForTesting
+        if(self.percentageForTraining+self.percentageForValidation+self.percentageForTesting != 1):
+            raise ValueError ("Wrong Proportion!")
         
 
     def main(self):
@@ -34,8 +38,22 @@ class makeData():
         newData = np.array(self.newData)
         newLabel = np.array(self.newLabel)
         
-        T_d, T_l, Te_d, Te_l = self.splitData()
-        return T_d, T_l, Te_d, Te_l
+        T_d, T_l, V_d, V_l, Te_d, Te_l = self.splitData()
+        print(T_d.shape)
+        print(T_l.shape)
+        print(V_d.shape)
+        print(V_l.shape)
+        print(Te_d.shape)
+        print(Te_l.shape)
+
+        # np.save('train_data.npy', T_d)
+        # np.save('train_label.npy', T_l)
+        # np.save('validation_data.npy', V_d)
+        # np.save('validation_label.npy', V_l)
+        # np.save('test_data.npy', Te_d)
+        # np.save('test_label.npy', Te_l)
+
+        return T_d, T_l, V_d, V_l, Te_d, Te_l
 
     def startMakingData(self, totalDataInThisClass, dataIndex, labelIndex):
         
@@ -95,36 +113,46 @@ class makeData():
     def splitData(self):
         train_data = []
         train_label = []
+        val_data = []
+        val_label = []
         test_data = []
         test_label = []
         
-        trainDataIndex = self.getDataPosition()
-        for i in trainDataIndex:
-            for j in range(i[0], i[2]):
+        dataIndex = self.getDataPosition()
+        for i in dataIndex:
+            for j in range(i[0], i[3]):
                 if j < i[1]:
                     train_data.append(self.newData[j])
                     train_label.append(self.newLabel[j])
+                elif j >= i[1] and j < i[2]:
+                    val_data.append(self.newData[j])
+                    val_label.append(self.newLabel[j])
                 else:
                     test_data.append(self.newData[j])
                     test_label.append(self.newLabel[j])
 
         train_data = np.array(train_data)
         train_label = np.array(train_label)
+        val_data = np.array(val_data)
+        val_label = np.array(val_label)
         test_data = np.array(test_data)
         test_label = np.array(test_label)
-        return train_data, train_label, test_data, test_label
+        return train_data, train_label, val_data, val_label, test_data, test_label
 
     def getDataPosition(self):
-        amount_for_training = [int(i*self.percentageForTrainingData) for i in self.LABEL_TOTAL_COUNT]
+        amount_for_training = [int(i*self.percentageForTraining)+1 for i in self.LABEL_TOTAL_COUNT]
+        amount_for_val = [int(i*self.percentageForValidation)+1 for i in self.LABEL_TOTAL_COUNT]
         startPoint = 0
-        trainDataIndex = []
-        print(len(self.LABEL_TOTAL_COUNT))
+        dataIndex = []
         for i in range(len(self.LABEL_TOTAL_COUNT)):
-            trainDataIndex.append([startPoint, amount_for_training[i]+startPoint, self.LABEL_TOTAL_COUNT[i]+startPoint])
+            trainPoint = amount_for_training[i]+startPoint
+            validationPoint = amount_for_training[i]+amount_for_val[i]+startPoint
+            endPoint = self.LABEL_TOTAL_COUNT[i]+startPoint
+            dataIndex.append([startPoint, trainPoint, validationPoint, endPoint])
             startPoint += self.LABEL_TOTAL_COUNT[i]
         
-        print('split train data index: ', trainDataIndex)
-        return trainDataIndex
+        print('split train data index: ', dataIndex)
+        return dataIndex
 
     def openTable(self):
         dataFromCSV = pd.read_csv(table_path,dtype='str',header=None)
