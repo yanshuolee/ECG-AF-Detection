@@ -52,7 +52,7 @@ class makeData():
                 self.increaseData(i, dataIndex, labelIndex)
         
         self.LABEL_TOTAL_COUNT.append(self.CLASS_AMOUNT)
-        print(str(self.table.iloc[i,labelIndex]) + " is " + str(self.CLASS_AMOUNT))
+        print(str(self.table.iloc[i,labelIndex]) + ": " + str(self.CLASS_AMOUNT))
 
     def reduceData(self,i ,dataIndex, labelIndex):
         j = 1
@@ -118,11 +118,12 @@ class makeData():
         amount_for_training = [int(i*self.percentageForTrainingData) for i in self.LABEL_TOTAL_COUNT]
         startPoint = 0
         trainDataIndex = []
+        print(len(self.LABEL_TOTAL_COUNT))
         for i in range(len(self.LABEL_TOTAL_COUNT)):
             trainDataIndex.append([startPoint, amount_for_training[i]+startPoint, self.LABEL_TOTAL_COUNT[i]+startPoint])
             startPoint += self.LABEL_TOTAL_COUNT[i]
         
-        print('train data index: ', trainDataIndex)
+        print('split train data index: ', trainDataIndex)
         return trainDataIndex
 
     def openTable(self):
@@ -134,12 +135,4 @@ class makeData():
         record = index[0]
         record.shape = (record.shape[0], )
         return record
-
-# print("30s : ")
-# newData, newLabel = generateData(30).makeData()
-# print(newLabel.shape)
-# print("9s : ")
-# newData, newLabel = generateData(9, 300).makeData()
-# print("9s overlap_dot: ")
-# newData, newLabel = generateData(9, 300, 1350).makeData()
         

@@ -1,0 +1,7 @@
+[I 19:44:38.510 NotebookApp] Serving notebooks from local directory: /home/hsiehch/ECG-project
+[I 19:44:38.510 NotebookApp] 0 active kernels
+[I 19:44:38.510 NotebookApp] The Jupyter Notebook is running at:
+[I 19:44:38.510 NotebookApp] http://120.125.70.120:8888/
+[I 19:44:38.510 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 19:44:44.353 NotebookApp] Interrupted...
+[I 19:44:44.353 NotebookApp] Shutting down 0 kernels
