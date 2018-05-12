@@ -143,12 +143,12 @@ class makeData():
         amount_for_training = [int(i*self.percentageForTraining)+1 for i in self.LABEL_TOTAL_COUNT]
         amount_for_val = [int(i*self.percentageForValidation)+1 for i in self.LABEL_TOTAL_COUNT]
         startPoint = 0
-        dataIndex = []
+        self.dataIndex = []
         for i in range(len(self.LABEL_TOTAL_COUNT)):
             trainPoint = amount_for_training[i]+startPoint
             validationPoint = amount_for_training[i]+amount_for_val[i]+startPoint
             endPoint = self.LABEL_TOTAL_COUNT[i]+startPoint
-            dataIndex.append([startPoint, trainPoint, validationPoint, endPoint])
+            self.dataIndex.append([startPoint, trainPoint, validationPoint, endPoint])
             startPoint += self.LABEL_TOTAL_COUNT[i]
         
         print('split train data index: ', dataIndex)
