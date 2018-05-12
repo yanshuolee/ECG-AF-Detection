@@ -11,6 +11,7 @@ class makeData():
     newLabel = []
     ONE_HOT_ENCODE_LABEL = {'A':0, '~':1, 'N':2, 'O':3}
     LABEL_TOTAL_COUNT = []
+    dataPosition = []
 
     def __init__(self, seconds, percentageForTraining, percentageForValidation, percentageForTesting, overlap_dot = 0):
         SAMPLE_RATE = 300
@@ -20,7 +21,7 @@ class makeData():
         self.percentageForTraining = percentageForTraining
         self.percentageForValidation = percentageForValidation
         self.percentageForTesting = percentageForTesting
-        self.dataPosition = []
+        
         if(self.percentageForTraining+self.percentageForValidation+self.percentageForTesting != 1):
             raise ValueError ("Wrong Proportion!")
         
