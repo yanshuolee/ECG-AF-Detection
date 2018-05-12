@@ -20,6 +20,7 @@ class makeData():
         self.percentageForTraining = percentageForTraining
         self.percentageForValidation = percentageForValidation
         self.percentageForTesting = percentageForTesting
+        self.dataPosition = []
         if(self.percentageForTraining+self.percentageForValidation+self.percentageForTesting != 1):
             raise ValueError ("Wrong Proportion!")
         
@@ -143,16 +144,16 @@ class makeData():
         amount_for_training = [int(i*self.percentageForTraining)+1 for i in self.LABEL_TOTAL_COUNT]
         amount_for_val = [int(i*self.percentageForValidation)+1 for i in self.LABEL_TOTAL_COUNT]
         startPoint = 0
-        self.dataIndex = []
+        
         for i in range(len(self.LABEL_TOTAL_COUNT)):
             trainPoint = amount_for_training[i]+startPoint
             validationPoint = amount_for_training[i]+amount_for_val[i]+startPoint
             endPoint = self.LABEL_TOTAL_COUNT[i]+startPoint
-            self.dataIndex.append([startPoint, trainPoint, validationPoint, endPoint])
+            self.dataPosition.append([startPoint, trainPoint, validationPoint, endPoint])
             startPoint += self.LABEL_TOTAL_COUNT[i]
         
-        print('split train data index: ', self.dataIndex)
-        return self.dataIndex
+        print('split train data index: ', self.dataPosition)
+        return self.dataPosition
 
     def openTable(self):
         dataFromCSV = pd.read_csv(table_path,dtype='str',header=None)
