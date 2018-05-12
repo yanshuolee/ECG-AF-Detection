@@ -151,8 +151,8 @@ class makeData():
             self.dataIndex.append([startPoint, trainPoint, validationPoint, endPoint])
             startPoint += self.LABEL_TOTAL_COUNT[i]
         
-        print('split train data index: ', dataIndex)
-        return dataIndex
+        print('split train data index: ', self.dataIndex)
+        return self.dataIndex
 
     def openTable(self):
         dataFromCSV = pd.read_csv(table_path,dtype='str',header=None)
