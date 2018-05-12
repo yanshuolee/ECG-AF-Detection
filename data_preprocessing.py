@@ -11,7 +11,7 @@ class makeData():
     newLabel = []
     ONE_HOT_ENCODE_LABEL = {'A':0, '~':1, 'N':2, 'O':3}
     LABEL_TOTAL_COUNT = []
-    dataPosition = []
+    
 
     def __init__(self, seconds, percentageForTraining, percentageForValidation, percentageForTesting, overlap_dot = 0):
         SAMPLE_RATE = 300
@@ -21,7 +21,7 @@ class makeData():
         self.percentageForTraining = percentageForTraining
         self.percentageForValidation = percentageForValidation
         self.percentageForTesting = percentageForTesting
-        
+        self.dataPosition = []
         if(self.percentageForTraining+self.percentageForValidation+self.percentageForTesting != 1):
             raise ValueError ("Wrong Proportion!")
         
@@ -47,13 +47,6 @@ class makeData():
         print(V_l.shape)
         print(Te_d.shape)
         print(Te_l.shape)
-
-        # np.save('train_data.npy', T_d)
-        # np.save('train_label.npy', T_l)
-        # np.save('validation_data.npy', V_d)
-        # np.save('validation_label.npy', V_l)
-        # np.save('test_data.npy', Te_d)
-        # np.save('test_label.npy', Te_l)
 
         return T_d, T_l, V_d, V_l, Te_d, Te_l
 
