@@ -25,17 +25,6 @@ class makeData():
         else:
             raise ValueError ("the range should be 0 to 1!")
 
-    def makeVariableSizeData(self):
-        afTotal = self.table.count(axis = 0)[3]
-        noiseTotal = self.table.count(axis = 0)[1]
-        otherTotal = self.table.count(axis = 0)[5]
-        normalTotal = self.table.count(axis = 0)[7]
-        
-        dataList = []
-        for i in range(afTotal):
-            dataList.append(self.openData(self.table.iloc[i,2]))
-        print(dataList)
-    
     def generateData(self):
         numOfAf, numOfNormal, numOfOther, numOfNoise = self.numOfDataForTraining()
         self.startMakingData(numOfAf, numOfNormal, numOfOther, numOfNoise)
