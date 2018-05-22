@@ -3,7 +3,7 @@ import wfdb as wf
 import pandas as pd
 
 table_path = 'table.csv'
-ECG_folder_path = '/home/yanshuo/Desktop/research/dataset/'
+ECG_folder_path = '/home/hsiehch/dataset/'
 ONE_HOT_ENCODE_LABEL = {'A':[0,0,0,1], '~':[0,0,1,0], 'N':[0,1,0,0], 'O':[1,0,0,0]}
 dataFromCSV = pd.read_csv(table_path,dtype='str',header=None)
 
