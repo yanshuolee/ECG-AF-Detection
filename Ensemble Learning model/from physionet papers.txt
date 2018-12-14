@@ -1,0 +1,16 @@
+[See notebook]
+
+Detection of Atrial Fibrillation Episodes from Short Single Lead Recordings by Means of Ensemble Learning
+http://www.cinc.org/archives/2017/pdf/169-313.pdf
+
+Detection of Atrial Fibrillation Using Decision Tree Ensemble
+http://www.cinc.org/archives/2017/pdf/342-204.pdf
+
+機器學習: Ensemble learning之Bagging、Boosting和AdaBoost
+https://medium.com/@chih.sheng.huang821/機器學習-ensemble-learning之bagging-boosting和adaboost-af031229ebc3
+
+不平衡數據處理技術——RUSBoost
+https://www.itread01.com/articles/1490818748.html
+
+Kaggle機器學習競賽神器XGBoost介紹
+https://medium.com/@yehjames/資料分析-機器學習-第5-2講-kaggle機器學習競賽神器xgboost介紹-1c8f55cffcc

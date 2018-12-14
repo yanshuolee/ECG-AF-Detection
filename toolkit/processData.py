@@ -66,7 +66,9 @@ def makeInsuffitientData(i, dataIndex, labelIndex, table, desired_data_point):
     global newLabel
     data = openData(ECG_folder_path, table.iloc[i,dataIndex])
     label = table.iloc[i,labelIndex]
-    newData.append(data[len(data)-desired_data_point  : ])
+#     newData.append(data[len(data)-desired_data_point : ])
+    # make data from the beginning
+    newData.append(data[ : desired_data_point])
     newLabel.append(ONE_HOT_ENCODE_LABEL[label])
     CLASS_AMOUNT += 1
 
@@ -79,6 +81,10 @@ def increaseData(i, dataIndex, labelIndex, table, desired_data_point):
     tmp = data
     numOfBatch = desired_data_point // len(data)
     leftData = desired_data_point % len(data)
+    
+    print(numOfBatch)
+    print(leftData)
+    print('======')
     while numOfBatch > 1 :
         tmp = np.append(tmp, data)
         numOfBatch -= 1

@@ -1,0 +1,15 @@
+[reference]
+* https://www.cnblogs.com/bnuvincent/p/7357632.html
+* https://stackoverflow.com/questions/43459317/keras-class-weight-vs-sample-weights-in-the-fit-generator
+* https://www.iro.umontreal.ca/~lisa/pointeurs/TR1312.pdf
+
+[version control]
+* 21 Nov, 2018
+    * add compute_sample_weight to deal with inbalanced data.  
+        <<Loss: 0.588, Accuracy: 0.782, Epoch: 135>>
+* 2 Dec, 2018
+    * normalize noisy data and train with weighted-target model.
+        <<Loss: 0.773, Accuracy: 0.723, Epoch: 95>>
+      
+      
+To-do list:
