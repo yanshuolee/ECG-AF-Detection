@@ -84,21 +84,19 @@ def create_model(learning_rate, bs, ks, num_layer):
     model = Sequential()
     # baseline
     model.add(Conv1D(filters = num_filter, kernel_size = ks, input_shape = (9000, 1)))
-    model.add(BatchNormalization())
     model.add(Activation('relu'))
+    model.add(BatchNormalization())
     model.add(MaxPooling1D(pool_size = 2))
     
     for i in range(2,num_layer+1):
         try:
             if i==num_layer:
                 model.add(Conv1D(filters = num_filter, kernel_size = ks))
-                model.add(BatchNormalization())
                 model.add(Activation('relu'))
                 break
             if i%2 != 0:
                 num_filter = num_filter *2
             model.add(Conv1D(filters = num_filter, kernel_size = ks))
-            model.add(BatchNormalization())
             model.add(Activation('relu'))
             model.add(MaxPooling1D(pool_size = 2))
             if i in [6, 8, 9]:
