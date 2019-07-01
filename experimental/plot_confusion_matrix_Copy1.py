@@ -11,7 +11,7 @@ def plot_confusion_matrix(cm, classes,
     if normalize:
         cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
         
-    title='Confusion matrix'
+    title='Predicted label'
     plt.imshow(cm, interpolation='nearest', cmap=cmap)
     plt.title(title)
     plt.colorbar()

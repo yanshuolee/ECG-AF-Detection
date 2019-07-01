@@ -53,7 +53,7 @@ def get_data():
     print('Train Data:', trainData.shape)
     print('Train Label: ', trainLabel.shape)
 
-    kf = KFold(n_splits=5, shuffle=True)
+    kf = KFold(n_splits=5, shuffle=True, random_state=100)
     print(kf)
 
     training_data = []
