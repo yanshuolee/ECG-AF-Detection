@@ -1,8 +1,9 @@
+# TODO fix agg problem using https://matplotlib.org/faq/howto_faq.html#matplotlib-in-a-web-application-server
+# import matplotlib
+# matplotlib.use('Agg')
 import wfdb as wf
 import pandas as pd
-import matplotlib
-matplotlib.use('Agg')
-import pylab as plt
+import matplotlib.pyplot as plt
 import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense, Flatten, Conv1D, GlobalMaxPooling1D, Dropout, MaxPooling1D
