@@ -1,16 +1,17 @@
-import pylab as plt
 import matplotlib
+matplotlib.use('Agg')
+import pylab as plt
 import numpy as np
-from keras.models import Sequential
-from keras.layers import Dense, Flatten, Conv1D, MaxPooling1D, AveragePooling1D, Dropout
-from keras.layers import Activation, BatchNormalization
-from keras.optimizers import Adam
-from keras.utils import np_utils
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Flatten, Conv1D, MaxPooling1D, AveragePooling1D, Dropout
+from tensorflow.keras.layers import Activation, BatchNormalization
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras import utils as np_utils
 import tensorflow as tf
 from sklearn.model_selection import KFold
 from sklearn.preprocessing import normalize
 np.set_printoptions(suppress=True)
-matplotlib.use('Agg')
+
 
 def history_display(path, hist, train, validation):
     plt.figure()
@@ -110,7 +111,9 @@ def create_model(learning_rate, bs, ks, num_layer):
     model.add(Flatten())
     model.add(Dense(4, activation = "softmax"))
     
-    adam = Adam(lr = learning_rate)
-    model.compile(optimizer = adam, loss = "categorical_crossentropy", metrics=['accuracy'])
+#     adam = Adam(lr = learning_rate)
+    
+    from keras_radam.optimizer_v2 import RAdam
+    model.compile(optimizer = RAdam(learning_rate), loss = "categorical_crossentropy", metrics=['accuracy'])
     
     return model
