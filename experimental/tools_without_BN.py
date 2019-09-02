@@ -4,13 +4,14 @@ import pylab as plt
 import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense, Flatten, Conv1D, MaxPooling1D, AveragePooling1D, Dropout
-from keras.layers import Activation, BatchNormalization
+from keras.layers import Activation
 from keras.optimizers import Adam
 from keras import utils as np_utils
 import tensorflow as tf
 from sklearn.model_selection import KFold
 from sklearn.preprocessing import normalize
 np.set_printoptions(suppress=True)
+
 
 def history_display(path, hist, train, validation):
     plt.figure()
@@ -88,7 +89,6 @@ def create_model(learning_rate, bs, ks, num_layer):
     # baseline
     model.add(Conv1D(filters = num_filter, kernel_size = ks, input_shape = (9000, 1)))
     model.add(Activation('relu'))
-    model.add(BatchNormalization())
     model.add(MaxPooling1D(pool_size = 2))
     
     for i in range(2,num_layer+1):
@@ -114,9 +114,7 @@ def create_model(learning_rate, bs, ks, num_layer):
     model.add(Dense(32, activation = 'relu'))
     model.add(Dense(4, activation = "softmax"))
     
-#     adam = Adam(lr = learning_rate)
-    
-    from keras_radam import RAdam
-    model.compile(optimizer = RAdam(lr = learning_rate), loss = "categorical_crossentropy", metrics=['accuracy'])
+    adam = Adam(lr = learning_rate)
+    model.compile(optimizer = adam, loss = "categorical_crossentropy", metrics=['accuracy'])
     
     return model

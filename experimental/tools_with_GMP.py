@@ -75,6 +75,7 @@ def get_data():
     
     print("data: {}".format(len(data)))
     print("label: {}".format(len(_label)))
+    print(sum(_label))
     
     kf = StratifiedKFold(n_splits=5, shuffle=True, random_state=100)
     print(kf)

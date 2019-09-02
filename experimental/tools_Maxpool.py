@@ -12,6 +12,7 @@ from sklearn.model_selection import KFold
 from sklearn.preprocessing import normalize
 np.set_printoptions(suppress=True)
 
+
 def history_display(path, hist, train, validation):
     plt.figure()
     plt.plot(hist.history[train])
@@ -96,6 +97,7 @@ def create_model(learning_rate, bs, ks, num_layer):
             if i==num_layer:
                 model.add(Conv1D(filters = num_filter, kernel_size = ks))
                 model.add(Activation('relu'))
+                model.add(MaxPooling1D(pool_size = 2))
                 break
             if i%2 != 0:
                 num_filter = num_filter *2
@@ -114,9 +116,7 @@ def create_model(learning_rate, bs, ks, num_layer):
     model.add(Dense(32, activation = 'relu'))
     model.add(Dense(4, activation = "softmax"))
     
-#     adam = Adam(lr = learning_rate)
-    
-    from keras_radam import RAdam
-    model.compile(optimizer = RAdam(lr = learning_rate), loss = "categorical_crossentropy", metrics=['accuracy'])
+    adam = Adam(lr = learning_rate)
+    model.compile(optimizer = adam, loss = "categorical_crossentropy", metrics=['accuracy'])
     
     return model

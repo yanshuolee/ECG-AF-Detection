@@ -6,10 +6,10 @@ from keras.models import Sequential
 from keras.layers import Dense, Flatten, Conv1D, MaxPooling1D, AveragePooling1D, Dropout
 from keras.layers import Activation, BatchNormalization
 from keras.optimizers import Adam
-from keras import utils as np_utils
+from keras.utils import np_utils
 import tensorflow as tf
 from sklearn.model_selection import KFold
-from sklearn.preprocessing import normalize
+import data_preprocessing as dp
 np.set_printoptions(suppress=True)
 
 def history_display(path, hist, train, validation):
@@ -37,49 +37,19 @@ def write_file(path, evaluation, f1_scores, model_structure):
         model_structure.summary(print_fn=lambda x: writer.write(x + '\n'))
         
 def get_data():
-    trainD = np.load("/home/hsiehch/30s/train_data.npy")
-    trainL = np.load("/home/hsiehch/30s/train_label.npy")
-    validationD = np.load("/home/hsiehch/30s/validation_data.npy")
-    validationL = np.load("/home/hsiehch/30s/validation_label.npy")
-    testD = np.load("/home/hsiehch/30s/test_data.npy")
-    testL = np.load("/home/hsiehch/30s/test_label.npy")
-
-    trainD = np.append(trainD, validationD, axis=0)
-    trainL = np.append(trainL, validationL, axis=0)
-    trainD = np.append(trainD, testD, axis=0)
-    trainL = np.append(trainL, testL, axis=0)
     
-    trainD = normalize(trainD)
+    T_d, T_l, V_d, V_l, Te_d, Te_l = dp.makeData(30, 0.9, 0.1, 0).main()
 
-    trainData = trainD.reshape((trainD.shape[0], trainD.shape[1], 1))
-    trainLabel = np_utils.to_categorical(trainL, 4)
+    trainData = T_d.reshape((T_d.shape[0], T_d.shape[1], 1))
+    trainLabel = np_utils.to_categorical(T_l, 4)
+    testData = V_d.reshape((V_d.shape[0], V_d.shape[1], 1))
+    testLabel = np_utils.to_categorical(V_l, 4)
     print('Train Data:', trainData.shape)
     print('Train Label: ', trainLabel.shape)
-
-    kf = KFold(n_splits=5, shuffle=True)
-    print(kf)
-
-    training_data = []
-    training_label = []
-    validation_cate_label = []
-    validation_data = []
-    validation_label = []
-
-    for train_index, test_index in kf.split(trainData):
-        print('trian:', train_index, 'len', len(train_index), 'test:', test_index, 'len', len(test_index))
-        training_data.append(trainData[train_index])
-        training_label.append(trainLabel[train_index])
-        validation_data.append(trainData[test_index])
-        validation_label.append(trainLabel[test_index])
-        validation_cate_label.append(trainL[test_index])
-
-    training_data = np.array(training_data)
-    training_label = np.array(training_label)
-    validation_data = np.array(validation_data)
-    validation_label = np.array(validation_label)
-    validation_cate_label = np.array(validation_cate_label)
+    print('Train Data:', testData.shape)
+    print('Train Label: ', testLabel.shape)
     
-    return training_data, training_label, validation_data, validation_label, validation_cate_label
+    return trainData, trainLabel, testData, testLabel, V_l
 
 def create_model(learning_rate, bs, ks, num_layer):
     num_filter = 32
@@ -114,9 +84,7 @@ def create_model(learning_rate, bs, ks, num_layer):
     model.add(Dense(32, activation = 'relu'))
     model.add(Dense(4, activation = "softmax"))
     
-#     adam = Adam(lr = learning_rate)
-    
-    from keras_radam import RAdam
-    model.compile(optimizer = RAdam(lr = learning_rate), loss = "categorical_crossentropy", metrics=['accuracy'])
+    adam = Adam(lr = learning_rate)
+    model.compile(optimizer = adam, loss = "categorical_crossentropy", metrics=['accuracy'])
     
     return model
