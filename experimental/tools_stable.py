@@ -1,5 +1,6 @@
-import pylab as plt
 import matplotlib
+matplotlib.use('Agg')
+import pylab as plt
 import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense, Flatten, Conv1D, MaxPooling1D, AveragePooling1D, Dropout
@@ -9,7 +10,6 @@ from keras.utils import np_utils
 import tensorflow as tf
 from sklearn.model_selection import KFold
 np.set_printoptions(suppress=True)
-matplotlib.use('Agg')
 
 def history_display(path, hist, train, validation):
     plt.figure()

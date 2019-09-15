@@ -1,8 +1,9 @@
-import pylab as plt
 import matplotlib
+matplotlib.use('Agg')
+import pylab as plt
 import numpy as np
 from keras.models import Sequential
-from keras.layers import Dense, Flatten, Conv1D, MaxPooling1D, AveragePooling1D, Dropout
+from keras.layers import Dense, Flatten, Conv1D, AveragePooling1D, Dropout
 from keras.layers import Activation, BatchNormalization
 from keras.optimizers import Adam
 from keras.utils import np_utils
@@ -10,7 +11,6 @@ import tensorflow as tf
 from sklearn.model_selection import KFold
 import data_preprocessing as dp
 np.set_printoptions(suppress=True)
-matplotlib.use('Agg')
 
 def history_display(path, hist, train, validation):
     plt.figure()
@@ -59,7 +59,7 @@ def create_model(learning_rate, bs, ks, num_layer):
     model.add(Conv1D(filters = num_filter, kernel_size = ks, input_shape = (9000, 1)))
     model.add(Activation('relu'))
     model.add(BatchNormalization())
-    model.add(MaxPooling1D(pool_size = 2))
+    model.add(AveragePooling1D(pool_size = 2))
     
     for i in range(2,num_layer+1):
         try:
@@ -71,7 +71,7 @@ def create_model(learning_rate, bs, ks, num_layer):
                 num_filter = num_filter *2
             model.add(Conv1D(filters = num_filter, kernel_size = ks))
             model.add(Activation('relu'))
-            model.add(MaxPooling1D(pool_size = 2))
+            model.add(AveragePooling1D(pool_size = 2))
             if i in [6, 8, 9]:
                 model.add(Dropout(0.5))
         except ValueError:
