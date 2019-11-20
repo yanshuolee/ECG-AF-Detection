@@ -1,0 +1,600 @@
+1:
+ks=3, num_layer=8, bs=30, lr=5e-05
+2:
+ks=3, num_layer=8, bs=30, lr=0.0001
+3:
+ks=3, num_layer=8, bs=30, lr=0.0005
+4:
+ks=3, num_layer=8, bs=30, lr=0.001
+5:
+ks=3, num_layer=8, bs=30, lr=0.005
+6:
+ks=3, num_layer=8, bs=50, lr=5e-05
+7:
+ks=3, num_layer=8, bs=50, lr=0.0001
+8:
+ks=3, num_layer=8, bs=50, lr=0.0005
+9:
+ks=3, num_layer=8, bs=50, lr=0.001
+10:
+ks=3, num_layer=8, bs=50, lr=0.005
+11:
+ks=3, num_layer=8, bs=70, lr=5e-05
+12:
+ks=3, num_layer=8, bs=70, lr=0.0001
+13:
+ks=3, num_layer=8, bs=70, lr=0.0005
+14:
+ks=3, num_layer=8, bs=70, lr=0.001
+15:
+ks=3, num_layer=8, bs=70, lr=0.005
+16:
+ks=3, num_layer=8, bs=90, lr=5e-05
+17:
+ks=3, num_layer=8, bs=90, lr=0.0001
+18:
+ks=3, num_layer=8, bs=90, lr=0.0005
+19:
+ks=3, num_layer=8, bs=90, lr=0.001
+20:
+ks=3, num_layer=8, bs=90, lr=0.005
+21:
+ks=3, num_layer=8, bs=120, lr=5e-05
+22:
+ks=3, num_layer=8, bs=120, lr=0.0001
+23:
+ks=3, num_layer=8, bs=120, lr=0.0005
+24:
+ks=3, num_layer=8, bs=120, lr=0.001
+25:
+ks=3, num_layer=8, bs=120, lr=0.005
+26:
+ks=3, num_layer=9, bs=30, lr=5e-05
+27:
+ks=3, num_layer=9, bs=30, lr=0.0001
+28:
+ks=3, num_layer=9, bs=30, lr=0.0005
+29:
+ks=3, num_layer=9, bs=30, lr=0.001
+30:
+ks=3, num_layer=9, bs=30, lr=0.005
+31:
+ks=3, num_layer=9, bs=50, lr=5e-05
+32:
+ks=3, num_layer=9, bs=50, lr=0.0001
+33:
+ks=3, num_layer=9, bs=50, lr=0.0005
+34:
+ks=3, num_layer=9, bs=50, lr=0.001
+35:
+ks=3, num_layer=9, bs=50, lr=0.005
+36:
+ks=3, num_layer=9, bs=70, lr=5e-05
+37:
+ks=3, num_layer=9, bs=70, lr=0.0001
+38:
+ks=3, num_layer=9, bs=70, lr=0.0005
+39:
+ks=3, num_layer=9, bs=70, lr=0.001
+40:
+ks=3, num_layer=9, bs=70, lr=0.005
+41:
+ks=3, num_layer=9, bs=90, lr=5e-05
+42:
+ks=3, num_layer=9, bs=90, lr=0.0001
+43:
+ks=3, num_layer=9, bs=90, lr=0.0005
+44:
+ks=3, num_layer=9, bs=90, lr=0.001
+45:
+ks=3, num_layer=9, bs=90, lr=0.005
+46:
+ks=3, num_layer=9, bs=120, lr=5e-05
+47:
+ks=3, num_layer=9, bs=120, lr=0.0001
+48:
+ks=3, num_layer=9, bs=120, lr=0.0005
+49:
+ks=3, num_layer=9, bs=120, lr=0.001
+50:
+ks=3, num_layer=9, bs=120, lr=0.005
+51:
+ks=3, num_layer=10, bs=30, lr=5e-05
+52:
+ks=3, num_layer=10, bs=30, lr=0.0001
+53:
+ks=3, num_layer=10, bs=30, lr=0.0005
+54:
+ks=3, num_layer=10, bs=30, lr=0.001
+55:
+ks=3, num_layer=10, bs=30, lr=0.005
+56:
+ks=3, num_layer=10, bs=50, lr=5e-05
+57:
+ks=3, num_layer=10, bs=50, lr=0.0001
+58:
+ks=3, num_layer=10, bs=50, lr=0.0005
+59:
+ks=3, num_layer=10, bs=50, lr=0.001
+60:
+ks=3, num_layer=10, bs=50, lr=0.005
+61:
+ks=3, num_layer=10, bs=70, lr=5e-05
+62:
+ks=3, num_layer=10, bs=70, lr=0.0001
+63:
+ks=3, num_layer=10, bs=70, lr=0.0005
+64:
+ks=3, num_layer=10, bs=70, lr=0.001
+65:
+ks=3, num_layer=10, bs=70, lr=0.005
+66:
+ks=3, num_layer=10, bs=90, lr=5e-05
+67:
+ks=3, num_layer=10, bs=90, lr=0.0001
+68:
+ks=3, num_layer=10, bs=90, lr=0.0005
+69:
+ks=3, num_layer=10, bs=90, lr=0.001
+70:
+ks=3, num_layer=10, bs=90, lr=0.005
+71:
+ks=3, num_layer=10, bs=120, lr=5e-05
+72:
+ks=3, num_layer=10, bs=120, lr=0.0001
+73:
+ks=3, num_layer=10, bs=120, lr=0.0005
+74:
+ks=3, num_layer=10, bs=120, lr=0.001
+75:
+ks=3, num_layer=10, bs=120, lr=0.005
+76:
+ks=3, num_layer=11, bs=30, lr=5e-05
+77:
+ks=3, num_layer=11, bs=30, lr=0.0001
+78:
+ks=3, num_layer=11, bs=30, lr=0.0005
+79:
+ks=3, num_layer=11, bs=30, lr=0.001
+80:
+ks=3, num_layer=11, bs=30, lr=0.005
+81:
+ks=3, num_layer=11, bs=50, lr=5e-05
+82:
+ks=3, num_layer=11, bs=50, lr=0.0001
+83:
+ks=3, num_layer=11, bs=50, lr=0.0005
+84:
+ks=3, num_layer=11, bs=50, lr=0.001
+85:
+ks=3, num_layer=11, bs=50, lr=0.005
+86:
+ks=3, num_layer=11, bs=70, lr=5e-05
+87:
+ks=3, num_layer=11, bs=70, lr=0.0001
+88:
+ks=3, num_layer=11, bs=70, lr=0.0005
+89:
+ks=3, num_layer=11, bs=70, lr=0.001
+90:
+ks=3, num_layer=11, bs=70, lr=0.005
+91:
+ks=3, num_layer=11, bs=90, lr=5e-05
+92:
+ks=3, num_layer=11, bs=90, lr=0.0001
+93:
+ks=3, num_layer=11, bs=90, lr=0.0005
+94:
+ks=3, num_layer=11, bs=90, lr=0.001
+95:
+ks=3, num_layer=11, bs=90, lr=0.005
+96:
+ks=3, num_layer=11, bs=120, lr=5e-05
+97:
+ks=3, num_layer=11, bs=120, lr=0.0001
+98:
+ks=3, num_layer=11, bs=120, lr=0.0005
+99:
+ks=3, num_layer=11, bs=120, lr=0.001
+100:
+ks=3, num_layer=11, bs=120, lr=0.005
+101:
+ks=5, num_layer=8, bs=30, lr=5e-05
+102:
+ks=5, num_layer=8, bs=30, lr=0.0001
+103:
+ks=5, num_layer=8, bs=30, lr=0.0005
+104:
+ks=5, num_layer=8, bs=30, lr=0.001
+105:
+ks=5, num_layer=8, bs=30, lr=0.005
+106:
+ks=5, num_layer=8, bs=50, lr=5e-05
+107:
+ks=5, num_layer=8, bs=50, lr=0.0001
+108:
+ks=5, num_layer=8, bs=50, lr=0.0005
+109:
+ks=5, num_layer=8, bs=50, lr=0.001
+110:
+ks=5, num_layer=8, bs=50, lr=0.005
+111:
+ks=5, num_layer=8, bs=70, lr=5e-05
+112:
+ks=5, num_layer=8, bs=70, lr=0.0001
+113:
+ks=5, num_layer=8, bs=70, lr=0.0005
+114:
+ks=5, num_layer=8, bs=70, lr=0.001
+115:
+ks=5, num_layer=8, bs=70, lr=0.005
+116:
+ks=5, num_layer=8, bs=90, lr=5e-05
+117:
+ks=5, num_layer=8, bs=90, lr=0.0001
+118:
+ks=5, num_layer=8, bs=90, lr=0.0005
+119:
+ks=5, num_layer=8, bs=90, lr=0.001
+120:
+ks=5, num_layer=8, bs=90, lr=0.005
+121:
+ks=5, num_layer=8, bs=120, lr=5e-05
+122:
+ks=5, num_layer=8, bs=120, lr=0.0001
+123:
+ks=5, num_layer=8, bs=120, lr=0.0005
+124:
+ks=5, num_layer=8, bs=120, lr=0.001
+125:
+ks=5, num_layer=8, bs=120, lr=0.005
+126:
+ks=5, num_layer=9, bs=30, lr=5e-05
+127:
+ks=5, num_layer=9, bs=30, lr=0.0001
+128:
+ks=5, num_layer=9, bs=30, lr=0.0005
+129:
+ks=5, num_layer=9, bs=30, lr=0.001
+130:
+ks=5, num_layer=9, bs=30, lr=0.005
+131:
+ks=5, num_layer=9, bs=50, lr=5e-05
+132:
+ks=5, num_layer=9, bs=50, lr=0.0001
+133:
+ks=5, num_layer=9, bs=50, lr=0.0005
+134:
+ks=5, num_layer=9, bs=50, lr=0.001
+135:
+ks=5, num_layer=9, bs=50, lr=0.005
+136:
+ks=5, num_layer=9, bs=70, lr=5e-05
+137:
+ks=5, num_layer=9, bs=70, lr=0.0001
+138:
+ks=5, num_layer=9, bs=70, lr=0.0005
+139:
+ks=5, num_layer=9, bs=70, lr=0.001
+140:
+ks=5, num_layer=9, bs=70, lr=0.005
+141:
+ks=5, num_layer=9, bs=90, lr=5e-05
+142:
+ks=5, num_layer=9, bs=90, lr=0.0001
+143:
+ks=5, num_layer=9, bs=90, lr=0.0005
+144:
+ks=5, num_layer=9, bs=90, lr=0.001
+145:
+ks=5, num_layer=9, bs=90, lr=0.005
+146:
+ks=5, num_layer=9, bs=120, lr=5e-05
+147:
+ks=5, num_layer=9, bs=120, lr=0.0001
+148:
+ks=5, num_layer=9, bs=120, lr=0.0005
+149:
+ks=5, num_layer=9, bs=120, lr=0.001
+150:
+ks=5, num_layer=9, bs=120, lr=0.005
+151:
+ks=5, num_layer=10, bs=30, lr=5e-05
+152:
+ks=5, num_layer=10, bs=30, lr=0.0001
+153:
+ks=5, num_layer=10, bs=30, lr=0.0005
+154:
+ks=5, num_layer=10, bs=30, lr=0.001
+155:
+ks=5, num_layer=10, bs=30, lr=0.005
+156:
+ks=5, num_layer=10, bs=50, lr=5e-05
+157:
+ks=5, num_layer=10, bs=50, lr=0.0001
+158:
+ks=5, num_layer=10, bs=50, lr=0.0005
+159:
+ks=5, num_layer=10, bs=50, lr=0.001
+160:
+ks=5, num_layer=10, bs=50, lr=0.005
+161:
+ks=5, num_layer=10, bs=70, lr=5e-05
+162:
+ks=5, num_layer=10, bs=70, lr=0.0001
+163:
+ks=5, num_layer=10, bs=70, lr=0.0005
+164:
+ks=5, num_layer=10, bs=70, lr=0.001
+165:
+ks=5, num_layer=10, bs=70, lr=0.005
+166:
+ks=5, num_layer=10, bs=90, lr=5e-05
+167:
+ks=5, num_layer=10, bs=90, lr=0.0001
+168:
+ks=5, num_layer=10, bs=90, lr=0.0005
+169:
+ks=5, num_layer=10, bs=90, lr=0.001
+170:
+ks=5, num_layer=10, bs=90, lr=0.005
+171:
+ks=5, num_layer=10, bs=120, lr=5e-05
+172:
+ks=5, num_layer=10, bs=120, lr=0.0001
+173:
+ks=5, num_layer=10, bs=120, lr=0.0005
+174:
+ks=5, num_layer=10, bs=120, lr=0.001
+175:
+ks=5, num_layer=10, bs=120, lr=0.005
+176:
+ks=5, num_layer=11, bs=30, lr=5e-05
+177:
+ks=5, num_layer=11, bs=30, lr=0.0001
+178:
+ks=5, num_layer=11, bs=30, lr=0.0005
+179:
+ks=5, num_layer=11, bs=30, lr=0.001
+180:
+ks=5, num_layer=11, bs=30, lr=0.005
+181:
+ks=5, num_layer=11, bs=50, lr=5e-05
+182:
+ks=5, num_layer=11, bs=50, lr=0.0001
+183:
+ks=5, num_layer=11, bs=50, lr=0.0005
+184:
+ks=5, num_layer=11, bs=50, lr=0.001
+185:
+ks=5, num_layer=11, bs=50, lr=0.005
+186:
+ks=5, num_layer=11, bs=70, lr=5e-05
+187:
+ks=5, num_layer=11, bs=70, lr=0.0001
+188:
+ks=5, num_layer=11, bs=70, lr=0.0005
+189:
+ks=5, num_layer=11, bs=70, lr=0.001
+190:
+ks=5, num_layer=11, bs=70, lr=0.005
+191:
+ks=5, num_layer=11, bs=90, lr=5e-05
+192:
+ks=5, num_layer=11, bs=90, lr=0.0001
+193:
+ks=5, num_layer=11, bs=90, lr=0.0005
+194:
+ks=5, num_layer=11, bs=90, lr=0.001
+195:
+ks=5, num_layer=11, bs=90, lr=0.005
+196:
+ks=5, num_layer=11, bs=120, lr=5e-05
+197:
+ks=5, num_layer=11, bs=120, lr=0.0001
+198:
+ks=5, num_layer=11, bs=120, lr=0.0005
+199:
+ks=5, num_layer=11, bs=120, lr=0.001
+200:
+ks=5, num_layer=11, bs=120, lr=0.005
+201:
+ks=7, num_layer=8, bs=30, lr=5e-05
+202:
+ks=7, num_layer=8, bs=30, lr=0.0001
+203:
+ks=7, num_layer=8, bs=30, lr=0.0005
+204:
+ks=7, num_layer=8, bs=30, lr=0.001
+205:
+ks=7, num_layer=8, bs=30, lr=0.005
+206:
+ks=7, num_layer=8, bs=50, lr=5e-05
+207:
+ks=7, num_layer=8, bs=50, lr=0.0001
+208:
+ks=7, num_layer=8, bs=50, lr=0.0005
+209:
+ks=7, num_layer=8, bs=50, lr=0.001
+210:
+ks=7, num_layer=8, bs=50, lr=0.005
+211:
+ks=7, num_layer=8, bs=70, lr=5e-05
+212:
+ks=7, num_layer=8, bs=70, lr=0.0001
+213:
+ks=7, num_layer=8, bs=70, lr=0.0005
+214:
+ks=7, num_layer=8, bs=70, lr=0.001
+215:
+ks=7, num_layer=8, bs=70, lr=0.005
+216:
+ks=7, num_layer=8, bs=90, lr=5e-05
+217:
+ks=7, num_layer=8, bs=90, lr=0.0001
+218:
+ks=7, num_layer=8, bs=90, lr=0.0005
+219:
+ks=7, num_layer=8, bs=90, lr=0.001
+220:
+ks=7, num_layer=8, bs=90, lr=0.005
+221:
+ks=7, num_layer=8, bs=120, lr=5e-05
+222:
+ks=7, num_layer=8, bs=120, lr=0.0001
+223:
+ks=7, num_layer=8, bs=120, lr=0.0005
+224:
+ks=7, num_layer=8, bs=120, lr=0.001
+225:
+ks=7, num_layer=8, bs=120, lr=0.005
+226:
+ks=7, num_layer=9, bs=30, lr=5e-05
+227:
+ks=7, num_layer=9, bs=30, lr=0.0001
+228:
+ks=7, num_layer=9, bs=30, lr=0.0005
+229:
+ks=7, num_layer=9, bs=30, lr=0.001
+230:
+ks=7, num_layer=9, bs=30, lr=0.005
+231:
+ks=7, num_layer=9, bs=50, lr=5e-05
+232:
+ks=7, num_layer=9, bs=50, lr=0.0001
+233:
+ks=7, num_layer=9, bs=50, lr=0.0005
+234:
+ks=7, num_layer=9, bs=50, lr=0.001
+235:
+ks=7, num_layer=9, bs=50, lr=0.005
+236:
+ks=7, num_layer=9, bs=70, lr=5e-05
+237:
+ks=7, num_layer=9, bs=70, lr=0.0001
+238:
+ks=7, num_layer=9, bs=70, lr=0.0005
+239:
+ks=7, num_layer=9, bs=70, lr=0.001
+240:
+ks=7, num_layer=9, bs=70, lr=0.005
+241:
+ks=7, num_layer=9, bs=90, lr=5e-05
+242:
+ks=7, num_layer=9, bs=90, lr=0.0001
+243:
+ks=7, num_layer=9, bs=90, lr=0.0005
+244:
+ks=7, num_layer=9, bs=90, lr=0.001
+245:
+ks=7, num_layer=9, bs=90, lr=0.005
+246:
+ks=7, num_layer=9, bs=120, lr=5e-05
+247:
+ks=7, num_layer=9, bs=120, lr=0.0001
+248:
+ks=7, num_layer=9, bs=120, lr=0.0005
+249:
+ks=7, num_layer=9, bs=120, lr=0.001
+250:
+ks=7, num_layer=9, bs=120, lr=0.005
+251:
+ks=7, num_layer=10, bs=30, lr=5e-05
+252:
+ks=7, num_layer=10, bs=30, lr=0.0001
+253:
+ks=7, num_layer=10, bs=30, lr=0.0005
+254:
+ks=7, num_layer=10, bs=30, lr=0.001
+255:
+ks=7, num_layer=10, bs=30, lr=0.005
+256:
+ks=7, num_layer=10, bs=50, lr=5e-05
+257:
+ks=7, num_layer=10, bs=50, lr=0.0001
+258:
+ks=7, num_layer=10, bs=50, lr=0.0005
+259:
+ks=7, num_layer=10, bs=50, lr=0.001
+260:
+ks=7, num_layer=10, bs=50, lr=0.005
+261:
+ks=7, num_layer=10, bs=70, lr=5e-05
+262:
+ks=7, num_layer=10, bs=70, lr=0.0001
+263:
+ks=7, num_layer=10, bs=70, lr=0.0005
+264:
+ks=7, num_layer=10, bs=70, lr=0.001
+265:
+ks=7, num_layer=10, bs=70, lr=0.005
+266:
+ks=7, num_layer=10, bs=90, lr=5e-05
+267:
+ks=7, num_layer=10, bs=90, lr=0.0001
+268:
+ks=7, num_layer=10, bs=90, lr=0.0005
+269:
+ks=7, num_layer=10, bs=90, lr=0.001
+270:
+ks=7, num_layer=10, bs=90, lr=0.005
+271:
+ks=7, num_layer=10, bs=120, lr=5e-05
+272:
+ks=7, num_layer=10, bs=120, lr=0.0001
+273:
+ks=7, num_layer=10, bs=120, lr=0.0005
+274:
+ks=7, num_layer=10, bs=120, lr=0.001
+275:
+ks=7, num_layer=10, bs=120, lr=0.005
+276:
+ks=7, num_layer=11, bs=30, lr=5e-05
+277:
+ks=7, num_layer=11, bs=30, lr=0.0001
+278:
+ks=7, num_layer=11, bs=30, lr=0.0005
+279:
+ks=7, num_layer=11, bs=30, lr=0.001
+280:
+ks=7, num_layer=11, bs=30, lr=0.005
+281:
+ks=7, num_layer=11, bs=50, lr=5e-05
+282:
+ks=7, num_layer=11, bs=50, lr=0.0001
+283:
+ks=7, num_layer=11, bs=50, lr=0.0005
+284:
+ks=7, num_layer=11, bs=50, lr=0.001
+285:
+ks=7, num_layer=11, bs=50, lr=0.005
+286:
+ks=7, num_layer=11, bs=70, lr=5e-05
+287:
+ks=7, num_layer=11, bs=70, lr=0.0001
+288:
+ks=7, num_layer=11, bs=70, lr=0.0005
+289:
+ks=7, num_layer=11, bs=70, lr=0.001
+290:
+ks=7, num_layer=11, bs=70, lr=0.005
+291:
+ks=7, num_layer=11, bs=90, lr=5e-05
+292:
+ks=7, num_layer=11, bs=90, lr=0.0001
+293:
+ks=7, num_layer=11, bs=90, lr=0.0005
+294:
+ks=7, num_layer=11, bs=90, lr=0.001
+295:
+ks=7, num_layer=11, bs=90, lr=0.005
+296:
+ks=7, num_layer=11, bs=120, lr=5e-05
+297:
+ks=7, num_layer=11, bs=120, lr=0.0001
+298:
+ks=7, num_layer=11, bs=120, lr=0.0005
+299:
+ks=7, num_layer=11, bs=120, lr=0.001
+300:
+ks=7, num_layer=11, bs=120, lr=0.005
